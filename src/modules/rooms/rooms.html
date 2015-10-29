@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="col-md-6">
+		<button class="btn btn-success" ui-sref="new-reservation">
+			<i class="fa fa-plus"></i> New Reservation
+		</button>
+	</div>
+
+	<div class="col-md-6">
+		<div class="form-inline text-right">
+			<div class="form-group">
+				<button ng-click="prevWeek()" class="btn btn-default"><i class="fa fa-chevron-left"></i></button>
+		    	<input type="text" class="form-control" ng-model="options.fromDate" data-max-date="{{untilDate}}" placeholder="From" bs-datepicker>
+				<i class="fa fa-calendar"></i> <i class="fa fa-arrows-h"></i> <i class="fa fa-calendar"></i>
+				<input type="text" class="form-control" ng-model="options.toDate" data-min-date="{{fromDate}}" placeholder="Until" bs-datepicker>
+				<button ng-click="nextWeek()" class="btn btn-default"><i class="fa fa-chevron-right"></i></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="box">
+	<div gantt
+		data=data
+		from-date="options.fromDate"
+		to-date="options.toDate"
+		api="api"
+		column-magnet="options.columnMagnet"
+		current-date="options.currentDate">
+		<gantt-table enabled="true"></gantt-table>
+		<gantt-tooltips></gantt-tooltips>
+        <gantt-bounds></gantt-bounds>
+        <gantt-progress></gantt-progress>
+        <gantt-sortable></gantt-sortable>
+        <gantt-movable enabled="!options.readOnly"></gantt-movable>
+        <gantt-draw-task
+            enabled="options.canDraw"
+            move-threshold="2"
+            task-factory="drawTaskFactory">
+        </gantt-draw-task>
+        <gantt-overlap></gantt-overlap>
+        <gantt-resize-sensor></gantt-resize-sensor>
+	</div>
+</div>
+
+<div>{{ data | json }}</div>

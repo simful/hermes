@@ -1,0 +1,51 @@
+var gulp = require('gulp');
+var cat = require('gulp-concat');
+var server = require('gulp-server-livereload');
+var inject = require('gulp-inject');
+
+var paths = {
+	scripts: ['src/**/*.js'],
+	styles: ['src/css/*.css']
+};
+
+gulp.task('concat-scripts', function() {
+	return gulp.src(paths.scripts)
+		.pipe(cat('all.js'))
+		.pipe(gulp.dest('build'));
+});
+
+gulp.task('concat-styles', function() {
+	return gulp.src(paths.styles)
+		.pipe(cat('all.css'))
+		.pipe(gulp.dest('build'));
+});
+
+gulp.task('watch', function() {
+	gulp.watch(paths.scripts, ['index']);
+	gulp.watch(paths.styles, ['index']);
+});
+
+gulp.task('index', function() {
+	var target = gulp.src('./index.html');
+	var sources = gulp.src(['src/**/*.js', 'src/**/*.css'], {read: false});
+
+	return target.pipe(inject(sources))
+		.pipe(gulp.dest('.'));
+});
+
+gulp.task('concat', ['concat-scripts', 'concat-styles']);
+
+gulp.task('webserver', function() {
+	gulp.src('.')
+		.pipe(server({
+			livereload: true,
+		    directoryListing: false,
+			open: false,
+			enable: true,
+			filter: function(filePath, cb) {
+				cb( !(/node_module|src/.test(filePath)) )
+			}
+		}));
+});
+
+gulp.task('default', ['watch', 'index', 'webserver']);

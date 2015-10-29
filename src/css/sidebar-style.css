@@ -1,0 +1,38 @@
+.sidebar-icon {
+	display: table-cell;
+	border-radius: 50%;
+	background: #2ab0ed;
+	font-size: 24px;
+	width: 48px !important;
+	height: 48px;
+	position: relative;
+	box-shadow: 0 0 1px rgba(0,0,0,0.2);
+}
+
+.sidebar-collapse .sidebar-icon {
+	height: 37px;
+}
+
+.sidebar-icon .fa {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	margin-top: -12px;
+	display: block;
+	color: white;
+	text-align: center;
+}
+
+.sidebar-menu > li > a .title {
+	display: table-cell;
+	padding: 12px;
+	font-weight: normal;
+}
+
+.sidebar-menu > li > a {
+	padding: 5px;
+}
+
+.sidebar-menu > li.item.active > a {
+	background-color: #D5F0FD !important;
+}

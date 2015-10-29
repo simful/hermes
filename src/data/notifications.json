@@ -1,0 +1,12 @@
+[
+	{
+		"id": 1,
+		"content": "We have 20 new members.",
+		"icon": "fa-users text-aqua"
+	},
+	{
+		"id": 2,
+		"content": "Can we track new notifications?",
+		"icon": "fa-question-circle text-blue"
+	}
+]

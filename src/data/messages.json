@@ -1,0 +1,9 @@
+[
+	{
+		"id": 1,
+		"avatar": "/bower_components/AdminLTE/dist/img/user7-128x128.jpg",
+		"from": "Support Team",
+		"created_at": "",
+		"subject": "Message Subject Example"
+	}
+]

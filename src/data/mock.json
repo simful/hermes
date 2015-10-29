@@ -1,0 +1,63 @@
+{
+	"room_types": [
+		{
+			"id": 1,
+			"name": "Single Bed"
+		},
+		{
+			"id": 2,
+			"name": "Double Bed"
+		},
+		{
+			"id": 3,
+			"name": "Twin Bed"
+		}
+	],
+	"customers": [
+		{
+			"id": 1,
+			"name": "Ibrahim"
+		},
+		{
+			"id": 2,
+			"name": "Bex"
+		}
+	],
+	"rooms": [
+		{
+			"id": 1,
+			"name": "101",
+			"type": "Single Bed"
+		},
+		{
+			"id": 2,
+			"name": "102",
+			"type": "Double Bed"
+		},
+		{
+			"id": 3,
+			"name": "103",
+			"type": "Twin Bed"
+		}
+	],
+	"rates": [
+		{
+			"id": 1,
+			"name": "Weekdays",
+			"prices": {
+				"Single Bed": 10,
+				"Double Bed": 15,
+				"Twin Bed": 16
+			}
+		},
+		{
+			"id": 2,
+			"name": "Weekend",
+			"prices": {
+				"Single Bed": 15,
+				"Double Bed": 25,
+				"Twin Bed": 27
+			}
+		}
+	]
+}

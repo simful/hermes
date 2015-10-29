@@ -1,0 +1,7 @@
+{
+	"id": 1,
+	"username": "johndoe",
+	"fullname": "John Doe",
+	"title": "Administrator",
+	"avatar": "/bower_components/AdminLTE/dist/img/user3-128x128.jpg"
+}

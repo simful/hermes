@@ -1,0 +1,20 @@
+[
+	{
+		"name": "home",
+		"title": "Dashboard",
+		"icon": "home",
+		"color": "#FF83EA"
+	},
+	{
+		"name": "rooms",
+		"title": "Rooms",
+		"icon": "building",
+		"color": "#2ab0ed"
+	},
+	{
+		"name": "settings.general",
+		"title": "Settings",
+		"icon": "cogs",
+		"color": "#F5AC3F"
+	}
+]
