@@ -6,10 +6,24 @@
 					<label class="control-label">Customer</label>
 					<ui-select ng-model="reservation.customer_id">
 						<ui-select-match>{{$select.selected.name}}</ui-select-match>
-						<ui-select-choices repeat="option.id as option in mock.customers | filter: $select.search">
+						<ui-select-choices repeat="option.id as option in customers | filter: $select.search">
 							<div ng-bind-html="option.name | highlight: $select.search"></div>
 						</ui-select-choices>
 					</ui-select>
+				</div>
+			</div>
+
+			<div class="col-md-8" ng-if="reservation.customer_id == -1">
+				<div class="form">
+					<div class="form-group">
+						<label class="control-label">Customer Name</label>
+						<input type="text" class="form-control" ng-model="customer.name"/>
+					</div>
+
+					<button class="btn btn-success" ng-click="saveCustomer()">
+						<i class="fa fa-check"></i>
+						Save Customer
+					</button>
 				</div>
 			</div>
 		</div>

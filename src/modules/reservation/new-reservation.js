@@ -4,6 +4,14 @@ angular.module('boilerplate').controller('NewReservationCtrl', function($scope) 
 	$scope.reservation = {};
 	$scope.reservation.rooms = [];
 
+	$scope.customers = $scope.mock.customers;
+	$scope.customers.unshift({
+		id: -1,
+		name: 'Add new customer...'
+	});
+
+	$scope.customer = {};
+
 	$scope.addRoom = function() {
 		$scope.reservation.rooms.push({
 			room_id: 1,
@@ -41,5 +49,17 @@ angular.module('boilerplate').controller('NewReservationCtrl', function($scope) 
 		$scope.total = total;
 		$scope.grandTotal = total + (total * $scope.tax);
 		return total;
+	};
+
+	$scope.saveCustomer = function() {
+		var newCustomer = {
+			id: $scope.customers.length,
+			name: $scope.customer.name
+		};
+
+		$scope.customers.push(newCustomer);
+
+		$scope.customer = {};
+		$scope.reservation.customer_id = newCustomer.id;
 	};
 });
