@@ -22,14 +22,6 @@ angular.module('hermes.rooms', ['gantt.sortable',
         currentDate: 'line'
 	};
 
-    var newReservation = $modal({
-        scope: $scope,
-        templateUrl: '/src/views/new-reservation.html',
-        show: false
-    });
-
-    var reservationDetails;
-
     $scope.showNewReservation = function() {
         newReservation.$promise.then(newReservation.show);
     }
@@ -57,7 +49,7 @@ angular.module('hermes.rooms', ['gantt.sortable',
 
         api.directives.on.new($scope, function(directiveName, directiveScope, element) {
             if (directiveName === 'ganttTask') {
-                reservationDetails = $popover(element, {title: directiveScope.task.model.name, contentTemplate: '/src/views/reservation-details.html', trigger: 'click', autoClose: true});
+                reservationDetails = $popover(element, {title: directiveScope.task.model.name, contentTemplate: '/src/modules/reservation/reservation-details.html', trigger: 'click', autoClose: true});
                 reservationDetails.$promise.then(reservationDetails.toggle);
 
                 element.bind('click', function(event) {
