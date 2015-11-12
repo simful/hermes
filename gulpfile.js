@@ -11,7 +11,7 @@ var paths = {
 var indexPage = gulp.src('./index.html');
 
 gulp.task('index-debug', function() {
-	var sources = gulp.src(['src/js/*.js', 'src/css/*.css'], { read: false });
+	var sources = gulp.src(['src/**/*.js', 'src/**/*.css'], { read: false });
 
 	return indexPage.pipe(inject(sources))
 		.pipe(gulp.dest('.'));
