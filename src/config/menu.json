@@ -12,6 +12,12 @@
 		"color": "#2ab0ed"
 	},
 	{
+		"name": "customers",
+		"title": "Customers",
+		"icon": "users",
+		"color": "#56a30d"
+	},
+	{
 		"name": "settings.general",
 		"title": "Settings",
 		"icon": "cogs",

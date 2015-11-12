@@ -20,6 +20,12 @@ angular.module('boilerplate', ['ui.router', 'ui.select', 'gantt', 'mgcrea.ngStra
 			controller: 'RoomsCtrl'
 		})
 
+		.state('customers', {
+			url: '/customers',
+			templateUrl: 'src/modules/customers/customers.html',
+			controller: 'CustomersCtrl'
+		})
+
 		.state('settings', {
 			url: '/settings',
 			abstract: true,
