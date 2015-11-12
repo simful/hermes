@@ -62,4 +62,8 @@ angular.module('boilerplate').controller('NewReservationCtrl', function($scope) 
 		$scope.customer = {};
 		$scope.reservation.customer_id = newCustomer.id;
 	};
+
+	$scope.saveReservation = function() {
+		
+	};
 });
