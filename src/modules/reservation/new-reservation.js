@@ -5,11 +5,6 @@ angular.module('boilerplate').controller('NewReservationCtrl', function($scope) 
 	$scope.reservation.rooms = [];
 
 	$scope.customers = $scope.mock.customers;
-	$scope.customers.unshift({
-		id: -1,
-		name: 'Add new customer...'
-	});
-
 	$scope.customer = {};
 
 	$scope.addRoom = function() {
@@ -64,6 +59,6 @@ angular.module('boilerplate').controller('NewReservationCtrl', function($scope) 
 	};
 
 	$scope.saveReservation = function() {
-		
+
 	};
 });
